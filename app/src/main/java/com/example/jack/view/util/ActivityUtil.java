@@ -2,6 +2,10 @@ package com.example.jack.view.util;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
+import android.view.View;
+import android.view.WindowManager;
 
 import com.example.jack.view.base.BaseApplication;
 
@@ -20,4 +24,6 @@ public class ActivityUtil {
         BaseApplication.getContext().startActivity(new Intent().setClass(BaseApplication.getContext(), aClass).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
 
     }
+
+
 }

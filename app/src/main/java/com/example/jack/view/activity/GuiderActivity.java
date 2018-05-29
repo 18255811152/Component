@@ -68,6 +68,7 @@ public class GuiderActivity extends FragmentActivity {
     @OnClick(R.id.btn_go)
     public void onViewClicked() {
         ActivityUtil.startActivity(MainActivity.class);
+        finish();
     }
 
 
