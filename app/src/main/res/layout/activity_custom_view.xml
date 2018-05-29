@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.example.jack.view.MainActivity">
+
+    <!--<com.example.jack.view.activity.customView.TitleViewView&ndash;&gt;-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="50dp" />-->
+
+    <!--<com.example.jack.view.View.CounterView-->
+    <!--android:layout_width="100dp"-->
+    <!--android:layout_height="100dp"-->
+    <!--android:layout_alignParentLeft="true" />-->
+
+    <com.example.jack.view.activity.customView.customViewList.TitleView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/id_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:divider="#ffff0000"
+        android:dividerHeight="10dp" />
+
+</RelativeLayout>

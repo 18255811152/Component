@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="homeDate">
+        <item>view</item>
+        <item>recycle</item>
+        <item>SpannableStringBuilder</item>
+    </string-array>
+
+    <string-array name="customViewDate">
+        <item>move_pic</item>
+        <item>xf_layout</item>
+    </string-array>
+
+    <declare-styleable name="XLFlowLayout">
+        <!--间距-->
+        <attr name="childVerticalSpace" format="dimension" />
+        <attr name="childHorizontalSpace" format="dimension" />
+    </declare-styleable>
+</resources>

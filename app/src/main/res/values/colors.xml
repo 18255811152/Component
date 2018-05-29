@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="translucent">#80987654</color>//#80987654 半透明颜色
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="light_blue">#323232</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="c_0">#ffffe464</color>
+    <color name="c_1">#ffef4a4a</color>
+    <color name="c_2">#ffceee88</color>
+    <color name="c_3">#ffceee88</color>
+</resources>
