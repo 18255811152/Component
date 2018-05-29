@@ -68,5 +68,6 @@ dependencies {
     api 'com.hwangjr.rxbus:rxbus:1.0.6'
 //    api 'com.github.barteksc:android-pdf-viewer:2.4.0'//读取pdf文件
     api 'com.bigkoo:convenientbanner:2.0.5'
+    api 'me.relex:circleindicator:1.1.7@aar'
 }
 

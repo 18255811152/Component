@@ -35,7 +35,7 @@ public class WelcomeGuideActivity extends Activity implements ViewPager.OnPageCh
         initViews();
 
         // 初始化底部小点
-        initDots();
+//        initDots();
     }
 
     private void initViews() {
@@ -98,6 +98,6 @@ public class WelcomeGuideActivity extends Activity implements ViewPager.OnPageCh
     @Override
     public void onPageSelected(int arg0) {
         // 设置底部小点选中状态
-        setCurrentDot(arg0);
+//        setCurrentDot(arg0);
     }
 }
