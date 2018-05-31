@@ -101,7 +101,7 @@ public class RecyleHomeAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         @Override
         public void onBindView() {
             super.onBindView();
-            BannerConfigInit configInit = new BannerConfigInit(banner, MSPropties.getImageRes(), MSPropties.getimageTitle(), new                    OnBannerListener() {
+            BannerConfigInit configInit = new BannerConfigInit(banner, MSPropties.getImageRes(), MSPropties.getimageTitle(), new OnBannerListener() {
                 @Override
                 public void OnBannerClick(int position) {
                     ToastUtil.showShortToast("sssssssssssss");
@@ -119,6 +119,12 @@ public class RecyleHomeAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         public void onBindView() {
             super.onBindView();
             text.setText("wo shi  di  er  ge ");
+            text.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
         }
 
         public CorTextViewHolder(View itemView) {
