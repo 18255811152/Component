@@ -1,5 +1,6 @@
 package com.example.jack.view;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
@@ -10,38 +11,36 @@ import com.example.jack.view.activity.customView.customViewList.HeaderView;
 import com.example.jack.view.activity.customView.customViewList.TitleView;
 import com.example.jack.view.adapter.MainRecycleAdapter;
 import com.example.jack.view.base.BaseActivity;
+import com.example.jack.view.base.IBaseView;
+import com.example.jack.view.bean.TestServiceIp;
 import com.example.jack.view.data.Test;
+import com.example.jack.view.mvp.preserter.ServicePreserter;
+import com.example.jack.view.mvp.view.IIPView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements IIPView {
     RecyclerView mrecyclerView;
     TitleView titleView;
     @BindView(R.id.title)
     HeaderView title;
     @BindView(R.id.id_recyclerview)
     RecyclerView idRecyclerview;
+    private Context context;
+    private ServicePreserter servicePreserter;
 
     @Override
     protected void createLayoutView() {
+        context = this;
         setContentView(R.layout.activity_main);
+        servicePreserter = new ServicePreserter(context, this);
     }
 
     @Override
     protected void initView() {
-        for (int i : TestJava.sore())
-            Log.e("TAG", "TestJava.sore()" + i);
-
-
-        for (int removeZero : TestJava.removeZero())
-            Log.e("TAG", "removeZero" + removeZero);
-
-
-        TestJava.count();
-
-
+        servicePreserter.getServiceIp("63.223.108.42");
         mrecyclerView = (RecyclerView) findViewById(R.id.id_recyclerview);
         RecyclerView.LayoutManager mLayoutManager = new StaggeredGridLayoutManager(
                 3,
@@ -56,7 +55,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initDate() {
-
+        servicePreserter.getServiceIp("63.223.108.42");
     }
 
     @Override
@@ -69,5 +68,11 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
+    }
+
+    @Override
+    public void onResult(Object o) {
+        TestServiceIp serviceIp = (TestServiceIp) o;
+        Log.e("TAG", "serviceIp" + serviceIp.getCountry());
     }
 }

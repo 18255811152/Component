@@ -1,7 +1,10 @@
 package com.example.jack.view.mvp.moder;
 
+import android.util.Log;
+
 import com.example.jack.view.net.ApiException;
 import com.example.jack.view.net.HttpResult;
+import com.example.jack.view.util.ToastUtil;
 
 import rx.Observable;
 import rx.Subscriber;
@@ -34,10 +37,13 @@ public class BaseModer {
         @Override
         public T call(HttpResult<T> httpResult) {
 
-            if (!httpResult.isSuccess()) {
-                throw new ApiException(httpResult.getCode(), httpResult.getMessage());
+            if (0 != httpResult.getCode()) {
+                ToastUtil.showLongToast("返回数据错误");
+            } else {
+                return httpResult.getData();
             }
             return httpResult.getData();
         }
     }
+
 }

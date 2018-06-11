@@ -14,31 +14,27 @@ import com.example.jack.view.util.SharePreferenceUtil;
 
 
 public class SplashActivity extends BaseActivity {
-
-
     Handler handler = new Handler();
 
     @Override
     protected void createLayoutView() {
         initStatus();
         setContentView(R.layout.splash_activity);
+
+
     }
 
     @Override
     protected void initView() {
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (true == SharePreferenceUtil.getIsFirstLogin(SplashActivity.this)) {
-                    ActivityUtil.startActivity(MainActivity.class);
-                } else {
-                    SharePreferenceUtil.savaIsFristLogin(SplashActivity.this, true);
-                    ActivityUtil.startActivity(GuiderActivity.class);
-                }
-                finish();
 
-
+        handler.postDelayed(() -> {
+            if (true == SharePreferenceUtil.getIsFirstLogin(SplashActivity.this)) {
+                ActivityUtil.startActivity(MainActivity.class);
+            } else {
+                SharePreferenceUtil.savaIsFristLogin(SplashActivity.this, true);
+                ActivityUtil.startActivity(GuiderActivity.class);
             }
+            finish();
         }, 2000);
 
     }
@@ -47,6 +43,7 @@ public class SplashActivity extends BaseActivity {
     protected void initDate() {
 
     }
+
 
     @Override
     protected void setTitleView() {
@@ -62,8 +59,7 @@ public class SplashActivity extends BaseActivity {
         } else {
             WindowManager.LayoutParams localLayoutParams = getWindow().getAttributes();
             localLayoutParams.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | localLayoutParams.flags);
-            //or ?
-//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
     }
+
 }

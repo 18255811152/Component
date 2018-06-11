@@ -26,7 +26,7 @@ public class RetrofitHelper {
          * 获取到的域名地址
          */
 //        String baseUrl = DataCenter.getInstance().getIp();
-        String baseUrl = "www.baidu.com";
+        String baseUrl = "http://ip.taobao.com/";
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
 
         builder.connectTimeout(DEFAULT_TIMEOUT_SECONDS, TimeUnit.SECONDS)
