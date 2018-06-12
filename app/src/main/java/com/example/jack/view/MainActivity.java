@@ -11,11 +11,10 @@ import com.example.jack.view.activity.customView.customViewList.HeaderView;
 import com.example.jack.view.activity.customView.customViewList.TitleView;
 import com.example.jack.view.adapter.MainRecycleAdapter;
 import com.example.jack.view.base.BaseActivity;
-import com.example.jack.view.base.IBaseView;
 import com.example.jack.view.bean.TestServiceIp;
-import com.example.jack.view.data.Test;
 import com.example.jack.view.mvp.preserter.ServicePreserter;
 import com.example.jack.view.mvp.view.IIPView;
+import com.example.jack.view.view.refview.jd.JDRefreshLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,8 +27,10 @@ public class MainActivity extends BaseActivity implements IIPView {
     HeaderView title;
     @BindView(R.id.id_recyclerview)
     RecyclerView idRecyclerview;
+    private JDRefreshLayout refreshview;
     private Context context;
     private ServicePreserter servicePreserter;
+
 
     @Override
     protected void createLayoutView() {
@@ -40,6 +41,7 @@ public class MainActivity extends BaseActivity implements IIPView {
 
     @Override
     protected void initView() {
+        refreshview = (JDRefreshLayout) findViewById(R.id.refreshviews);
         servicePreserter.getServiceIp("63.223.108.42");
         mrecyclerView = (RecyclerView) findViewById(R.id.id_recyclerview);
         RecyclerView.LayoutManager mLayoutManager = new StaggeredGridLayoutManager(

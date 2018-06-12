@@ -11,13 +11,18 @@
         android:layout_width="match_parent"
         android:layout_height="50dp" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/id_recyclerview"
+    <com.example.jack.view.view.refview.jd.JDRefreshLayout
+        android:id="@+id/refreshviews"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
-        android:background="@color/black"
-        android:divider="#ffff0000"
-        android:dividerHeight="10dp" />
+        android:layout_height="match_parent">
 
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/id_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:background="@color/black"
+            android:divider="#ffff0000"
+            android:dividerHeight="10dp" />
+    </com.example.jack.view.view.refview.jd.JDRefreshLayout>
 </RelativeLayout>
